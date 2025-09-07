@@ -24,10 +24,10 @@ import {
 export async function optimizePromptAction(input: OptimizePromptInput) {
   try {
     const result = await optimizePrompt(input);
-    return {success: true, optimizedPrompt: result.optimizedPrompt};
+    return {success: true as const, optimizedPrompt: result.optimizedPrompt};
   } catch (error) {
     console.error('Error optimizing prompt:', error);
-    return {success: false, error: (error as Error).message};
+    return {success: false as const, error: (error as Error).message};
   }
 }
 
@@ -36,10 +36,10 @@ export async function generateThumbnailAction(
 ) {
   try {
     const result = await generateThumbnailFromPrompt(input);
-    return {success: true, thumbnail: result.thumbnail};
+    return {success: true as const, thumbnail: result.thumbnail};
   } catch (error) {
     console.error('Error generating thumbnail:', error);
-    return {success: false, error: (error as Error).message};
+    return {success: false as const, error: (error as Error).message};
   }
 }
 
@@ -48,10 +48,10 @@ export async function editThumbnailAction(
 ) {
   try {
     const result = await iterativelyEditThumbnail(input);
-    return {success: true, thumbnail: result.editedThumbnail};
+    return {success: true as const, thumbnail: result.editedThumbnail};
   } catch (error) {
     console.error('Error editing thumbnail:', error);
-    return {success: false, error: (error as Error).message};
+    return {success: false as const, error: (error as Error).message};
   }
 }
 

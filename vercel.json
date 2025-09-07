@@ -1,0 +1,19 @@
+{
+  "build": {
+    "env": {
+      "GOOGLE_API_KEY": "@google_api_key"
+    }
+  },
+  "env": {
+    "GOOGLE_API_KEY": "@google_api_key"
+  },
+  "functions": {
+    "src/app/**/*.ts": {
+      "maxDuration": 30
+    },
+    "src/ai/**/*.ts": {
+      "maxDuration": 30
+    }
+  },
+  "regions": ["iad1"]
+}
